@@ -1,0 +1,54 @@
+{
+    "Versões": {
+      "Node": "20.11.0",
+      "Npm": "10.2.4"
+    },
+    "Instalações": {
+      "package-json": {
+        "descrição": "criar o arquivo de versões package.json",
+        "comando": "npm init -y"
+      },
+      "typescript": {
+        "descrição": "instalar o typescript e a interação do typescript com o node",
+        "comando1": "npm install typescript @types/node -D",
+        "comando2": "npx tsc --init"
+      },
+      "Node Target Mapping": {
+        "descrição": "pesquisar node target mapping no google, entrar no repositório e usar as configs recomendadas substituindo no tsconfig.json"
+      },
+      "tsx": {
+        "descrição": "biblioteca para tradução de typescript para javascript",
+        "comando": "npm install tsx -D",
+        "execução": "criar o arquivo src/http/server.ts, ir em package.json, scripts e criar o script --dev: tsx watch src/http/server.ts--, para executar só rodar npm run dev"
+      },
+      "fastify": {
+        "descrição": "framework de node",
+        "comando": "npm i fastify"
+      },
+      "Docker": {
+        "descrição": "docker-compose = pasta pra configuração do docker e dos serviços que vão ser usados (postgre e redis)",
+        "comandos": {
+          "para ligar":"docker compose up -d",
+          "para desligar":"docker-compose down"
+        }
+      },
+      "ORM prisma": {
+        "descrição": "ferramenta para ajudar a mexer com os bancos de dados (o .env é para variáveis de ambiente, só troquei as informações para as mesmas do bd do docker-compose)",
+        "comandos": {
+          "instalação": "npm install -D prisma",
+          "execução": "npx prisma init",
+          "para quando mexer no schema.prisma": "npx prisma migrate dev",
+          "para interface de video do bd": "npx prisma studio"
+        }
+      },
+      "Zod": {
+        "descrição": "ferramenta para validação de dados requisitados para a API",
+        "comando": "npm install zod"
+      },
+      "Fastify/cookie": {
+        "descrição": "ferramenta para trabalhar com cookies",
+        "comando": "npm i @fastify/cookie"
+      }
+  
+    }
+  }
