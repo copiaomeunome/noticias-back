@@ -48,6 +48,10 @@
       "Fastify/cookie": {
         "descrição": "ferramenta para trabalhar com cookies",
         "comando": "npm i @fastify/cookie"
+      },
+      "fastify cors": {
+        "descrição": "precisa pra permitir que o front se conecte com o back e da pra bloquear outras pessoas tambem",
+        "comando": "npm i @fastify/cors"
       }
   
     }

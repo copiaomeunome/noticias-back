@@ -1,9 +1,15 @@
 import fastify from 'fastify'
 import {z} from 'zod'
 import {PrismaClient} from '@prisma/client'
+import cors from '@fastify/cors'
 
 const app = fastify()
 const prisma = new PrismaClient();
+app.register(cors, { 
+    // put your options here
+    origin: "*",
+    methods:['GET','POST','DELETE']
+})
 
 app.get('/listar',async ()=>{
     const noticias = await prisma.noticias.findMany()
@@ -26,6 +32,16 @@ app.post('/criar',async (request,reply)=>{
         }
     })
     return reply.status(201).send()
+})
+
+app.delete<{Params:{id:string}}>('/excluir/:id',async (request,reply)=>{
+    const id=parseInt(request.params.id)
+    const noticiaDeletada= await prisma.noticias.delete({
+        where:{
+            id
+        }
+    })
+    return reply.send(noticiaDeletada)
 })
 
 
